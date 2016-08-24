@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme.BaseTranslucentStatus" parent="AppTheme.Base">
+        <!--fixme - enable the content under the top status bar
+        https://possiblemobile.com/2013/11/expand-your-brand-with-translucent-system-ui/-->
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+</resources>

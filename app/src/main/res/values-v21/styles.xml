@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- fixme Base application theme. -->
+    <style name="AppTheme" parent="AppTheme.BaseTranslucentStatus">
+        <!-- - enable transition-->
+        <item name="android:windowContentTransitions">true</item>
+        <!-- - specify shared element transitions -->
+        <item name="android:windowSharedElementEnterTransition">@transition/shared_element</item>
+    </style>
+
+</resources>

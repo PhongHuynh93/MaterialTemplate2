@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+
+    defaultConfig {
+        applicationId "dhbk.android.materialtemplate2"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'LICENSE.txt'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:support-v4:24.2.0'
+    // base project
+    compile 'com.byoutline.secretsauce:secretsauce:0.5.2'
+    // parceler by annotation
+    apt 'org.parceler:parceler:1.1.5'
+    compile 'org.parceler:parceler-api:1.1.5'
+    // bing data, auto update listview or recyclerview if datas underneath change
+    // https://github.com/evant/binding-collection-adapter
+    compile 'me.tatarka.bindingcollectionadapter:bindingcollectionadapter:1.3.0'
+    compile 'me.tatarka.bindingcollectionadapter:bindingcollectionadapter-recyclerview:1.3.0'
+    //    fab
+    //    https://github.com/shell-software/fab
+    compile 'com.github.shell-software:fab:1.1.2'
+    //    simple logcat
+    compile 'com.jakewharton.timber:timber:4.3.0'
+    //    http server
+    //    retrofit server
+    //    compile 'com.byoutline.mockserver:mockserver:2.0.0-SNAPSHOT'
+    //    dagger
+    apt 'com.google.dagger:dagger-compiler:2.5'
+    provided 'javax.annotation:jsr250-api:1.0'
+    compile 'com.google.dagger:dagger:2.5'
+    //    picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    //    retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    //    collection such as map
+    //    https://commons.apache.org/proper/commons-collections/download_collections.cgi
+    compile 'com.byoutline.androidstubserver:stubserver:1.4.1'
+    compile 'com.byoutline.ottocachedfield:observablecachedfield:1.0.1'
+    compile 'com.byoutline.eventcallback:eventcallback-api:1.0.1'
+    compile 'com.byoutline.ottoeventcallback:anythreadbus:1.0.0'
+    compile 'commons-collections:commons-collections:3.2.1'
+    //    butter knife
+    compile 'com.jakewharton:butterknife:8.3.0'
+    apt 'com.jakewharton:butterknife-compiler:8.3.0'
+    compile 'com.android.support:cardview-v7:24.2.0'
+    compile 'com.android.support:design:24.2.0'
+    compile 'com.android.support:recyclerview-v7:24.2.0'
+
+//    compile 'net.danlew:android.joda:2.9.4.1'
+
+    provided 'com.google.code.findbugs:findbugs:3.0.0'
+    provided 'com.google.auto.value:auto-value:1.2'
+
+}

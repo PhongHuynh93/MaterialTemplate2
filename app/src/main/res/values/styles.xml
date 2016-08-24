@@ -1,0 +1,143 @@
+<resources>
+    <!-- fixme Base application theme. -->
+    <style name="AppTheme" parent="AppTheme.BaseTranslucentStatus">
+    </style>
+
+    <style name="AppTheme.BaseTranslucentStatus" parent="AppTheme.Base">
+    </style>
+
+    <!--see https://developer.android.com/reference/android/support/v7/appcompat/R.attr.html-->
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--no toolbar-->
+        <item name="windowActionBar">false</item>
+        <!--Flag indicating whether this window's Action Bar should overlay application content.-->
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="windowActionBarOverlay">true</item>
+        <!--color palette
+        http://stackoverflow.com/questions/26714864/how-to-change-the-color-of-a-switchcompat-->
+        <!--fixme this is the color of bottom nav-->
+        <item name="colorPrimary">@color/green_primary</item>
+        <item name="colorPrimaryDark">@color/status_bar_color</item>
+        <item name="colorAccent">@android:color/holo_red_dark</item>
+        <item name="colorControlHighlight">@color/green_dark_50</item>
+        <item name="colorControlNormal">@color/ab_text_color</item>
+        <item name="colorControlActivated">@color/green_primary</item>
+
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="android:actionMenuTextColor">#999999</item>
+        <!--Color for text that appears within action menu items.-->
+        <item name="actionMenuTextColor">#999999</item>
+        <!--fixme - bg for app, đăt tại đây để ta ko cần overdraw lại trong layout của từng activity-->
+        <item name="android:windowBackground">@color/main_bg</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <!--Whether bars should rotate or not during transition-->
+        <item name="spinBars">true</item>
+    </style>
+
+    <!--title in toolbar style-->
+    <style name="TitleTextStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:color">@color/ab_text_color</item>
+        <item name="android:textColor">@color/ab_text_color</item>
+    </style>
+
+    <!--fixme fab style, anim appear and dissappear-->
+    <style name="ActionButtonStyleBase">
+        <item name="image_size">20dp</item>
+        <item name="show_animation">@anim/fab_roll_from_down</item>
+        <item name="hide_animation">@anim/fab_roll_to_down</item>
+        <item name="button_colorPressed">@color/green_primary</item>
+        <item name="shadow_color">@color/black_50</item>
+        <item name="shadow_radius">3dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">@dimen/button_size</item>
+        <item name="android:layout_height">@dimen/button_size</item>
+        <item name="android:layout_marginBottom">@dimen/fab_margin</item>
+    </style>
+    <style name="ActionButtonStyle" parent="ActionButtonStyleBase">
+    </style>
+
+    <!--fixme font style-->
+    <style name="LightFontStyle">
+        <item name="customFont">Roboto_Light.ttf</item>
+    </style>
+
+    <style name="ThinFontStyle">
+        <item name="customFont">Roboto_Thin.ttf</item>
+    </style>
+
+    <style name="BoldFontStyle">
+        <item name="customFont">Roboto_Bold.ttf</item>
+    </style>
+
+    <style name="RegularFontStyle">
+        <item name="customFont">Roboto_Regular.ttf</item>
+    </style>
+
+    <!--font for text view style-->
+    <style name="ProjectItemNameStyle" parent="LightFontStyle">
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:paddingBottom">@dimen/project_item_small_padding</item>
+        <item name="android:layout_marginLeft">@dimen/project_item_big_padding</item>
+        <item name="android:layout_marginRight">@dimen/project_item_big_padding</item>
+        <item name="android:paddingTop">@dimen/project_item_small_padding</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="ProjectItemBoldValue" parent="BoldFontStyle">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/text_dark_black</item>
+        <item name="android:textSize">@dimen/font_20</item>
+    </style>
+
+
+    <style name="ProjectItemLightWhite" parent="ProjectItemBoldValue">
+        <item name="customFont">Roboto_Light.ttf</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ProjectItemBoldValue.Normal">
+        <item name="customFont">Roboto_Light.ttf</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/font_13</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="ProjectItemBoldValue.Normal.Light">
+        <item name="android:textColor">@color/white_73</item>
+    </style>
+
+
+    <!--seekbar style-->
+    <style name="SeekBarStyle" parent="SeekBarStyleBase">
+    </style>
+
+    <style name="SeekBarStyleBase">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">11dp</item>
+        <item name="android:layout_marginTop">11dp</item>
+        <item name="android:maxHeight">9dp</item>
+        <item name="android:minHeight">9dp</item>
+        <item name="android:progress">50</item>
+        <item name="android:progressDrawable">@drawable/progress_drawable</item>
+        <item name="android:thumb">@android:color/transparent</item>
+        <item name="android:background">@drawable/elevation_shadow</item>
+    </style>
+
+</resources>
